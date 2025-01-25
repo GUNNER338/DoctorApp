@@ -27,6 +27,7 @@ const getDoctor = async () => {
       doctors {
         address
         about
+        role
         image {
           url
         }
