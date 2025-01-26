@@ -19,11 +19,11 @@ const DoctorList = () => {
 
   return (
     <div className=" px-8 ">
-      <h1 className="font-bold mb-6">Popular Doctors</h1>
-      <div className="flex grid-cols-3 md:grid-cols-3 lg:grid-cols-2 gap-7 ">
+      <h1 className="font-bold text-xl mt-20 mb-3 flex items-center justify-center">Popular<text className="text-primary ml-1 ">Doctors</text></h1>
+      <div className="flex grid-cols-3 md:grid-cols-3 lg:grid-cols-2 gap-7 items-center justify-center">
         {doctorList.length > 0 &&
           doctorList.map((item, index) => (
-            <div key={index} className="border-[1px]rounded-lg p-3 cursor-pointer">
+            <div key={index} className="border-[1px]rounded-lg p-3 cursor-pointer border border-green-950-950">
               <Image
                 src={item.image.url}
                 height={300}
