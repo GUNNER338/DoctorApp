@@ -18,12 +18,11 @@ const DoctorList = () => {
   };
 
   return (
-    <div className=" px-8 ">
+    <div className=" p-8">
       <h1 className="font-bold text-xl mt-20 mb-3 flex items-center justify-center">Popular<text className="text-primary ml-1 ">Doctors</text></h1>
-      <div className="flex grid-cols-3 md:grid-cols-3 lg:grid-cols-2 gap-7 items-center justify-center">
-        {doctorList.length > 0 &&
-          doctorList.map((item, index) => (
-            <div key={index} className="border-[1px]rounded-lg p-3 cursor-pointer border border-green-950-950">
+      <div className=" grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-7 mt-4 lg:grid-cols-5 lg:flex lg:items-center lg:justify-center">
+        {doctorList.length > 0 ? doctorList.map((item, index) => (
+            <div key={index} className="border-[1px] rounded-lg p-3 cursor-pointer ">
               <Image
                 src={item.image.url}
                 height={300}
@@ -40,8 +39,15 @@ const DoctorList = () => {
                 <h2 className="bg-primary text-white px-5 py-1 rounded-full mt-4 cursor-pointer hover:bg-blue-400  text-sm">Book Now</h2>
               </div>
             </div>
-            
-          ))}
+          ))
+          :
+          // Skelton Effect
+          [1,2,3,4,5,6].map((item,index)=>(
+          <div className="h-[220px] bg-slate-100 w-full rounded-lg animate-pulse">
+
+          </div>
+          ))
+          }
       </div>
     </div>
   );

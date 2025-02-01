@@ -34,13 +34,21 @@ const CategorySearch = () => {
       {/* Category Section */}  
       <div className="grid grid-cols-3
        md:grid-cols-4 lg:grid-cols-6">
-      {categoryList.length > 0 && categoryList.map((item, index) => index<6 &&(
+      {categoryList.length>0 ? categoryList.map((item, index) => index<6 &&(
           <div key={index} className="flex flex-col text-center gap-2 items-center mt-10 p-5 bg-blue-50 rounded-md m-3 hover:scale-105 transition-all ease-in-out"> 
             <Image src={item.image.url} alt={item.name} height={40} width={40}/>
             {/* <img src={item.image.url} alt={item.name} height={200} width={200}/> */}
             <p className="font-medium text-blue-600">{item.name}</p>
           </div>
-        ))}
+        ))
+        :
+        [1,2,3,4,5,6].map((item,index)=>(
+        <div className="h-[90px] m-2 bg-slate-100 w-[150px] rounded-lg animate-pulse">
+
+        </div>
+
+        ))
+        }
       </div>
     </div>
   );
